@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #131313;
+  --text-color: white;
+  --main-color: #00ffee;
+  --box-color: #91a3b0;
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 10%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--main-color);
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+.navbar a {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  margin-left: 3rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 12rem 8% 5rem;
+}
+
+.headfunction h2,
+.extra-section h2 {
+  font-size: 4.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+span {
+  color: var(--main-color);
+}
+
+.chart-space {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.marketoverview-box,
+.canvas-container,
+.result-card,
+.portfolio-form,
+.portfolio-table {
+  background: var(--box-color);
+  color: black;
+  border-radius: 2rem;
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.marketoverview-box {
+  height: 620px;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.marketchart-section h2,
+.chart-section h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.searchform-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+  width: 100%;
+}
+
+input[type="submit"],
+button {
+  background: black;
+  color: var(--main-color);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: var(--main-color);
+  color: black;
+}
+
+#formMessage,
+#portfolioMessage {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: black;
+  color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+img {
+  width: 35px;
+}
+
+.canvas-container {
+  padding: 3rem;
+  min-height: 620px;
+}
+
+.chart-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #d9d9d9;
+  padding: 6px;
+  border-radius: 16px;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.chart-switch button {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  color: black;
+  border-radius: 12px;
+  font-size: 1.6rem;
+}
+
+.chart-switch button.active {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.chart-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: black;
+  color: var(--main-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.chart-type p {
+  font-size: 1.5rem;
+}
+
+.indicator-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.indicator-box p {
+  background: black;
+  color: var(--main-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.chart-container {
+  height: 350px;
+  margin-bottom: 3rem;
+}
+
+.small-chart-container {
+  height: 220px;
+  margin-bottom: 3rem;
+}
+
+#tradingViewContainer,
+#tradingview_chart {
+  width: 100%;
+  height: 650px;
+}
+
+.extra-section {
+  min-height: auto;
+}
+
+.result-card {
+  padding: 3rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.portfolio-form {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio-table {
+  overflow: hidden;
+}
+
+.profit {
+  color: #00ff80;
+  font-weight: bold;
+}
+
+.loss {
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .chart-space {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-form {
+    grid-template-columns: 1fr;
+  }
+
+  .indicator-box {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar a {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .header {
+    padding: 2rem 5%;
+  }
+}

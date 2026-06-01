@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoPulse - Market Chart</title>
+
+  <link rel="stylesheet" href="CRYPTOCURRENCY.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+  <script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">CryptoPulse<span>.</span></a>
+
+    <nav class="navbar">
+      <a href="CRYPTOCURRENCY.html">Home</a>
+      <a href="chart.html" class="active">Chart</a>
+      <a href="#predictionSection">Prediction</a>
+      <a href="#portfolioSection">My Portfolio</a>
+    </nav>
+  </header>
+
+  <section class="headfunction" id="chart">
+    <h2>Market <span>Chart</span></h2>
+
+    <div class="chart-space">
+
+      <!-- LEFT BOX -->
+      <div class="marketoverview-box">
+        <div class="marketchart-section">
+          <h2>Market Overview</h2>
+
+          <form id="searchForm" class="searchform-container">
+            <input type="text" id="coinsearch" placeholder="Enter coin name or symbol e.g. bitcoin / btc">
+            <input type="submit" value="Search">
+          </form>
+
+          <p id="formMessage"></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th colspan="4">Top Coins</th>
+              </tr>
+            </thead>
+            <tbody id="output"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RIGHT BOX -->
+      <div class="chart-section">
+        <div class="canvas-container">
+          <h2 id="chartTitle">Cryptocurrency Price Chart</h2>
+
+          <div class="chart-switch">
+            <button id="showCustomChart" class="active">📈</button>
+            <button id="showTradingView">TV</button>
+          </div>
+
+          <!-- CUSTOM CHART -->
+          <div class="chart1">
+            <div class="chart-type">
+              <p>Chart Type:</p>
+              <select id="chartType">
+                <option value="line" selected>Line</option>
+                <option value="bar">Bar</option>
+              </select>
+            </div>
+
+            <div class="indicator-box">
+              <p id="currentPrice">Current Price: -</p>
+              <p id="maResult">Moving Average: -</p>
+              <p id="rsiResult">RSI: -</p>
+              <p id="macdResult">MACD: -</p>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="priceCanvas"></canvas>
+            </div>
+
+            <div class="small-chart-container">
+              <canvas id="volumeCanvas"></canvas>
+            </div>
+
+            <div class="small-chart-container">
+              <canvas id="rsiCanvas"></canvas>
+            </div>
+
+            <div class="small-chart-container">
+              <canvas id="macdCanvas"></canvas>
+            </div>
+          </div>
+
+          <!-- TRADINGVIEW -->
+          <div id="tradingViewContainer" style="display:none;">
+            <div id="tradingview_chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREDICTION -->
+  <section id="predictionSection" class="extra-section">
+    <h2>Price <span>Prediction</span></h2>
+    <div class="result-card">
+      <p id="predictionResult">Search a coin to generate prediction.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolioSection" class="extra-section">
+    <h2>My <span>Portfolio</span></h2>
+
+    <div class="portfolio-form">
+      <input type="text" id="portfolioCoin" placeholder="Coin ID e.g. bitcoin">
+      <input type="number" id="portfolioQuantity" placeholder="Quantity e.g. 0.5">
+      <input type="number" id="portfolioBuyPrice" placeholder="Buy price USD e.g. 50000">
+      <button id="addPortfolioBtn">Add Holding</button>
+    </div>
+
+    <p id="portfolioMessage"></p>
+
+    <table class="portfolio-table">
+      <thead>
+        <tr>
+          <th>Coin</th>
+          <th>Quantity</th>
+          <th>Buy Price</th>
+          <th>Current Price</th>
+          <th>Profit / Loss</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="portfolioOutput"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
